@@ -148,6 +148,7 @@ input{
   color: #7fffd4;
   justify-content: center;
   text-align: center;
+  font-size: 1.5vh;
 
 
 }
@@ -180,6 +181,9 @@ input{
   }
   .navBar *{
     font-size: 70%;
+  }
+  .userInfo img{
+    display: none;
   }
   .dash{
     width: 100%;
