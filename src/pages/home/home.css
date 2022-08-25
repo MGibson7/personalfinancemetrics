@@ -148,7 +148,7 @@ input{
   color: #7fffd4;
   justify-content: center;
   text-align: center;
-  font-size: 1.5vh;
+  font-size: 2vh;
 
 
 }
@@ -193,6 +193,6 @@ input{
     font-size: 1vh;
   }
   .dashes{
-    font-size: 20%;
+    font-size: 17%;
   }
 }
