@@ -93,8 +93,11 @@ const Home = () => {
      <div className="main">
         <div className="navBar">
         <div className="userInfo">
+            <div className="personal">
             <h2>Personal Finance Metrics</h2>
             <img src="https://www.freeiconspng.com/thumbs/financial-icon-png/finance-a-icons-free-icons-in-google-apps--icon-search-engine--14.png" alt="" />
+            </div>
+           
             <div className="age">
             <h3>Age:</h3>
             <h3 className="ageChange" style={{'display': disAge}}><input type="number" min = "0" max = "90" onChange={(e)=>setAge(e.target.value)} /></h3>
@@ -150,7 +153,7 @@ const Home = () => {
         <div className="dashes">
           <img src="https://icons.veryicon.com/png/o/miscellaneous/social-security-function-icon/report-loss-of-social-security-card.png" alt="" />
           <h2 className="otherChange" style={{'display': otherDisplay}}> <input type="number" min = "0" onChange={(e)=>setOther(e.target.value)} /></h2>
-          <h2 className  = "curDash" onClick={()=>{handleContent(otherDisplay, setOtherDisplay)}}>ANNUAL SOCIAL SECURITY AND OTHER INCOME: ${other}</h2>
+          <h2 className  = "curDash" onClick={()=>{handleContent(otherDisplay, setOtherDisplay)}}>FUTURE ANNUAL SOC. SECURITY + OTHER INCOME: ${other}</h2>
           
         </div>
 
