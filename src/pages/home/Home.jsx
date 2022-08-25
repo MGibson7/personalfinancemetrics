@@ -34,6 +34,7 @@ const Home = () => {
   
 
   let rate4 = Number(invested*0.04).toFixed(2)
+  let dollarUSLocale = Intl.NumberFormat('en-US');
 
   const handleContent = (invDisplay, setInvDisplay)=>{
     if (invDisplay === "none"){
@@ -130,30 +131,30 @@ const Home = () => {
         <div className="dashes">
           <img src="https://www.edison.com/content/dam/eix/visual-assets/icons/donation-money-bag-edison-green-icon.png" alt="" />
           <h2 className="investChange" style={{'display': invDisplay}}> <input type="number" min = "0" onChange={(e)=>setInvested(e.target.value)} /></h2>
-          <h2 className  = "curDash" onClick={()=>{handleContent(invDisplay, setInvDisplay)}}>INVESTMENTS: ${invested}</h2>
+          <h2 className  = "curDash" onClick={()=>{handleContent(invDisplay, setInvDisplay)}}>INVESTMENTS: ${dollarUSLocale.format(invested)}</h2>
           
         </div>
         <div className="dashes">
           <img src="https://www.freeiconspng.com/thumbs/dollar-icon-png/money-flat-money-png-15.png" alt="" />
-        <h2>4% Rate: ${rate4}</h2>
+        <h2>4% Rate: ${dollarUSLocale.format(rate4)}</h2>
           
         </div>
         <div className="dashes">
           <img src="http://www.clker.com/cliparts/U/6/e/C/Z/l/green-house-icon-md.png" alt="" />
           <h2 className="realChange" style={{'display': realDisplay}}><input type="number" min = "0" onChange={(e)=>setReal(e.target.value)} /></h2>
-          <h2 className  = "curDash" onClick={()=>{handleContent(realDisplay, setRealDisplay)}}>REAL ESTATE: ${real}</h2>
+          <h2 className  = "curDash" onClick={()=>{handleContent(realDisplay, setRealDisplay)}}>REAL ESTATE: ${dollarUSLocale.format(real)}</h2>
           
         </div>
         <div className="dashes">
           <img src="https://cdn-icons-png.flaticon.com/512/188/188473.png" alt="" />
           <h2 className="realChange" style={{'display': realInDisplay}}><input type="number" min = "0" onChange={(e)=>setRentIncome(e.target.value)} /></h2>
-          <h2 className  = "curDash" onClick={()=>{handleContent(realInDisplay, setRealInDisplay)}}>ANNUAL RENTAL INCOME: ${rentIncome}</h2>
+          <h2 className  = "curDash" onClick={()=>{handleContent(realInDisplay, setRealInDisplay)}}>ANNUAL RENTAL INCOME: ${dollarUSLocale.format(rentIncome)}</h2>
           
         </div>
         <div className="dashes">
           <img src="https://icons.veryicon.com/png/o/miscellaneous/social-security-function-icon/report-loss-of-social-security-card.png" alt="" />
           <h2 className="otherChange" style={{'display': otherDisplay}}> <input type="number" min = "0" onChange={(e)=>setOther(e.target.value)} /></h2>
-          <h2 className  = "curDash" onClick={()=>{handleContent(otherDisplay, setOtherDisplay)}}>FUTURE ANNUAL SOC. SECURITY + OTHER INCOME: ${other}</h2>
+          <h2 className  = "curDash" onClick={()=>{handleContent(otherDisplay, setOtherDisplay)}}>FUTURE ANNUAL SOC. SECURITY + OTHER INCOME: ${dollarUSLocale.format(other)}</h2>
           
         </div>
 
@@ -162,12 +163,12 @@ const Home = () => {
         <div className="circle">
           <img src={photo} alt="" />
           <h3>{phrase}</h3>
-          <h3>CURRENT Networth: ${networth}</h3>
-          <h3>CURRENT Annual Retirement Income ${curRetIncome}</h3>
-          <h3>FUTURE Annual Retirement Income: ${retIncome}</h3>
-          <h3>Annual Retirement Expenses: $({expenses*12})</h3>
-          <h3>CURRENT Annual Retirement Income vs Expenses: ${Number(curRetIncome-(expenses*12)).toFixed(2)}</h3>
-          <h3>FUTURE Annual Retirement Income vs Expenses: ${Number(retIncome-(expenses*12)).toFixed(2)}</h3>
+          <h3>CURRENT Networth: ${dollarUSLocale.format(networth)}</h3>
+          <h3>CURRENT Annual Retirement Income ${dollarUSLocale.format(curRetIncome)}</h3>
+          <h3>FUTURE Annual Retirement Income: ${dollarUSLocale.format(retIncome)}</h3>
+          <h3>Annual Retirement Expenses: $({dollarUSLocale.format(expenses*12)})</h3>
+          <h3>CURRENT Annual Retirement Income vs Expenses: ${dollarUSLocale.format(Number(curRetIncome-(expenses*12)).toFixed(2))}</h3>
+          <h3>FUTURE Annual Retirement Income vs Expenses: ${dollarUSLocale.format(Number(retIncome-(expenses*12)).toFixed(2))}</h3>
           
         </div>
 
@@ -177,26 +178,26 @@ const Home = () => {
       <div className="dashes">
         <img src="https://ercoenergy.us/wp-content/uploads/sites/4/2021/02/piggy-bank.png" alt="" />
         <h2 className="savingsChange" style={{'display': savingsDisplay}}> <input type="number" min = "0" onChange={(e)=>setSavings(e.target.value)} /></h2>
-          <h2 className  = "curDash" onClick={()=>{handleContent(savingsDisplay, setSavingsDisplay)}}>SAVINGS PER MONTH/CONTRIBUTIONS: ${savings}</h2>
+          <h2 className  = "curDash" onClick={()=>{handleContent(savingsDisplay, setSavingsDisplay)}}>SAVINGS PER MONTH/CONTRIBUTIONS: ${dollarUSLocale.format(savings)}</h2>
         
           
           </div>
           <div className="dashes">
             <img src="https://cdn-icons-png.flaticon.com/512/5110/5110766.png" alt="" />
             <h2 className="nonSavingsChange" style={{'display': nonSavingsDisplay}}> <input type="number" min = "0" onChange={(e)=>setNonSavings(e.target.value)} /></h2>
-          <h2 className  = "curDash" onClick={()=>{handleContent(nonSavingsDisplay, setNonSavingsDisplay)}}>NON SAVINGS CASH FLOW PER MTH: ${nonSavings}</h2>
+          <h2 className  = "curDash" onClick={()=>{handleContent(nonSavingsDisplay, setNonSavingsDisplay)}}>NON SAVINGS CASH FLOW PER MTH: ${dollarUSLocale.format(nonSavings)}</h2>
             
           </div>
           <div className="dashes">
             <img src="https://icon-library.com/images/lower-cost-icon/lower-cost-icon-4.jpg" alt="" />
             <h2 className="expensesChange" style={{'display': expensesDisplay}}> <input type="number" min = "0" onChange={(e)=>setExpenses(e.target.value)} /></h2>
-          <h2 className  = "curDash" onClick={()=>{handleContent(expensesDisplay, setExpensesDisplay)}}>Est. EXPENSES PER MONTH: ${expenses}</h2>
+          <h2 className  = "curDash" onClick={()=>{handleContent(expensesDisplay, setExpensesDisplay)}}>Est. EXPENSES PER MONTH: ${dollarUSLocale.format(expenses)}</h2>
             
           </div>
           <div className="dashes">
             <img src="https://cdn-icons-png.flaticon.com/512/4334/4334598.png" alt="" />
             <h2 className="liabChange" style={{'display': liabDisplay}}> <input type="number" min = "0" onChange={(e)=>setLiabs(e.target.value)} /></h2>
-          <h2 className  = "curDash" onClick={()=>{handleContent(liabDisplay, setLiabDisplay)}}>LIABILITIES: ${liabs}</h2>
+          <h2 className  = "curDash" onClick={()=>{handleContent(liabDisplay, setLiabDisplay)}}>LIABILITIES: ${dollarUSLocale.format(liabs)}</h2>
             
           </div>
           <div className="dashes">
