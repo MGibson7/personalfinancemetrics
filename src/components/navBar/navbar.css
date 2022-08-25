@@ -1,0 +1,51 @@
+.main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.navBar{
+    display: flex;
+    border: 1px solid white;
+    height: 10vh;
+    width: 80%;
+    align-self: center;
+    color: white;
+    margin-top: 1vh;
+    background-color: darkcyan;
+    border-radius: 1vh;
+
+}
+
+.navBar *{
+    margin-right: 0.5vw;
+    font-size: 100%;
+}
+
+.userInfo{
+    display: flex;
+    align-self: left;
+    width: 100%;
+}
+
+.userInfo img{
+    object-fit: contain;
+    margin: 0px;
+    padding: 0px;
+}
+
+.age, .date, .retirement{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+}
+
+.retirement{
+    margin: 0px;
+}
+
+input{
+    height: 3vh;
+}
